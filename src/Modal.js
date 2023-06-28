@@ -28,7 +28,7 @@ export default function Modal({ children, onClose }) {
 
     return ReactDOM.createPortal(
         <>
-            <div style={OVERLAY_STYLES} onClick={onClose} />
+            <div style={OVERLAY_STYLES} />
             <div style={MODAL_STYLES}>
                 <button
                     className='btn bg-danger fs-4'

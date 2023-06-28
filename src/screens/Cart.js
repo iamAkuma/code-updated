@@ -16,32 +16,31 @@ export default function Cart() {
   //   dispatch({type:"REMOVE",index:index})
   // }
 
-//   const handleCheckOut = async () => {
-//     let userEmail = localStorage.getItem("userEmail");
-//     // console.log(data,localStorage.getItem("userEmail"),new Date())
-//     let response = await fetch("http://localhost:5000/api/auth/orderData", {
-//       // credentials: 'include',
-//       // Origin:"http://localhost:3000/login",
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify({
-//         order_data: data,
-//         email: userEmail,
-//         order_date: new Date().toDateString()
-//       })
-//     });
-//     console.log("JSON RESPONSE:::::", response.status)
-//     if (response.status === 200) {
-//       dispatch({ type: "DROP" })
-//     }
-//   }
+  //   const handleCheckOut = async () => {
+  //     let userEmail = localStorage.getItem("userEmail");
+  //     // console.log(data,localStorage.getItem("userEmail"),new Date())
+  //     let response = await fetch("http://localhost:5000/api/auth/orderData", {
+  //       // credentials: 'include',
+  //       // Origin:"http://localhost:3000/login",
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json'
+  //       },
+  //       body: JSON.stringify({
+  //         order_data: data,
+  //         email: userEmail,
+  //         order_date: new Date().toDateString()
+  //       })
+  //     });
+  //     console.log("JSON RESPONSE:::::", response.status)
+  //     if (response.status === 200) {
+  //       dispatch({ type: "DROP" })
+  //     }
+  //   }
 
   let totalPrice = data.reduce((total, drink) => total + drink.price, 0)
   return (
     <div>
-
       {console.log(data)}
       <div className='container m-auto mt-5 table-responsive  table-responsive-sm table-responsive-md' >
         <table className='table table-hover '>
@@ -50,7 +49,6 @@ export default function Cart() {
               <th scope='col' >#</th>
               <th scope='col' >Name</th>
               <th scope='col' >Quantity</th>
-              <th scope='col' >Option</th>
               <th scope='col' >Amount</th>
               <th scope='col' ></th>
             </tr>
@@ -61,7 +59,6 @@ export default function Cart() {
                 <th scope='row' >{index + 1}</th>
                 <td >{drink.name}</td>
                 <td>{drink.qty}</td>
-                <td>{drink.size}</td>
                 <td>{drink.price}</td>
                 <td ><button type="button" className="btn p-0"><Delete onClick={() => { dispatch({ type: "REMOVE", index: index }) }} /></button> </td></tr>
             ))}
@@ -72,9 +69,6 @@ export default function Cart() {
           <button className='btn bg-success mt-5 '  > Check Out </button>
         </div>
       </div>
-
-
-
     </div>
   )
 }

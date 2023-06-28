@@ -77,7 +77,7 @@ export default function Card(props) {
       </div>
 
       <Modal show={showModal} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
+        <Modal.Header class closeButton>
           <Modal.Title>{props.drinkItem.name}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
@@ -91,7 +91,7 @@ export default function Card(props) {
           <p>{props.drinkItem.description}</p>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCloseModal}>
+          <Button className="btn btn-danger" variant="secondary" onClick={handleCloseModal}>
             Close
           </Button>
         </Modal.Footer>

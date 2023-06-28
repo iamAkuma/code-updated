@@ -1,16 +1,17 @@
-import React, { createContext, useContext, useReducer } from 'react'
+import React, { useReducer, useContext, createContext } from 'react';
 
 const CartStateContext = createContext();
 const CartDispatchContext = createContext();
 
-const reducer = (state, action)=>{
+const reducer = (state, action) => {
     switch (action.type) {
         case "ADD":
-            return [...state, { id: action.id, name: action.name, qty: action.qty, price: action.price, img: action.img }]
-        // case "REMOVE":
-        //     let newArr = [...state]
-        //     newArr.splice(action.index, 1)
-        //     return newArr;
+            return [...state, { id: action.id, name: action.name, qty: action.qty, 
+             price: action.price, img: action.img }]
+        case "REMOVE":
+            let newArr = [...state]
+            newArr.splice(action.index, 1)
+            return newArr;
         // case "DROP":
         //     let empArray = []
         //     return empArray
@@ -29,21 +30,17 @@ const reducer = (state, action)=>{
     }
 };
 
+export const CartProvider = ({ children }) => {
+    const [state, dispatch] = useReducer(reducer, []);
 
-
-export const CartProvider = ({children})=>{
-
-    const [state, dispatch] = useReducer(reducer,[])
-    return(
-<CartDispatchContext.Provider value={dispatch}>
-    <CartStateContext.Provider value={state}>
-        {children}
-    </CartStateContext.Provider>
-</CartDispatchContext.Provider>
-
+    return (
+        <CartDispatchContext.Provider value={dispatch}>
+            <CartStateContext.Provider value={state}>
+                {children}
+            </CartStateContext.Provider>
+        </CartDispatchContext.Provider>
     )
-
-}   
+};
 
 export const useCart = () => useContext(CartStateContext);
 export const useDispatchCart = () => useContext(CartDispatchContext);
