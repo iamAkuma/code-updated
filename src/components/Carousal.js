@@ -16,10 +16,10 @@ export default function Carousal() {
                         <img src="https://source.unsplash.com/random/900x700/?beer" className="d-block w-100  " style={{ filter: "brightness(30%)" }} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/900x700/?vodka" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
+                        <img src="https://source.unsplash.com/random/900x700/?beer" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
                     </div>
                     <div className="carousel-item">
-                        <img src="https://source.unsplash.com/random/900x700/?bar" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
+                        <img src="https://source.unsplash.com/random/900x700/?beer" className="d-block w-100 " style={{ filter: "brightness(30%)" }} alt="..." />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">

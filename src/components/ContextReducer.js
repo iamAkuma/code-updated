@@ -12,19 +12,19 @@ const reducer = (state, action) => {
             let newArr = [...state]
             newArr.splice(action.index, 1)
             return newArr;
-        // case "DROP":
-        //     let empArray = []
-        //     return empArray
-        // case "UPDATE":
-        //     let arr = [...state]
-        //     arr.find((drink, index) => {
-        //         if (drink.id === action.id) {
-        //             console.log(drink.qty, parseInt(action.qty), action.price + drink.price)
-        //             arr[index] = { ...drink, qty: parseInt(action.qty) + drink.qty, price: action.price + drink.price }
-        //         }
-        //         return arr
-        //     })
-        //     return arr
+        case "DROP":
+            let empArray = []
+            return empArray
+        case "UPDATE":
+            let arr = [...state]
+            arr.find((drink, index) => {
+                if (drink.id === action.id) {
+                    console.log(drink.qty, parseInt(action.qty), action.price + drink.price)
+                    arr[index] = { ...drink, qty: parseInt(action.qty) + drink.qty, price: action.price + drink.price }
+                }
+                return arr
+            })
+            return arr
         default:
             console.log("Error in Reducer");
     }

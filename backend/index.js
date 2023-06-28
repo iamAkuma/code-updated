@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
 app.use(express.json())
 app.use('/api', require("./Routes/createUser"))
 app.use('/api', require("./Routes/displayData"))
+app.use('/api', require("./Routes/OrderData"))
 
 // Start the server
 const port = process.env.PORT || 5000;
